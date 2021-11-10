@@ -1,0 +1,584 @@
+
+*{
+   box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+header{
+    height: 200px;
+}
+
+/* Start Information Section  */
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:800px){
+    .info{
+        flex-direction: column;
+    }
+}
+
+.information{
+    background: black;
+    /* height: 700px; */
+   
+}
+
+.infoones{
+    padding: 30px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(79,249,242,0.8));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infotwos{
+    height: 360px;
+    padding: 30px 20px;
+    background: linear-gradient(
+        90deg,
+        rgba(79,240,242,0.7) 20%,
+        rgba(114,150,149,0.9) 80%
+        );
+    display: flex;
+    position: relative;
+}
+
+
+.infotwos-child{
+   display: flex;
+   justify-content: center;
+   text-align: left;
+   text-shadow: 0px 1px 0px black,
+                0px 2px 0px black,
+                0px 3px 0px #4af9f2;
+}
+
+.infotwos-child p{
+    margin: 8px 5px;
+}
+
+.infotwos-child i{
+    color: yellow;
+}
+
+
+.readbtn{
+    width: 125px;
+    height: 50px;
+    margin: 10px 10px;
+    border-radius: 50px;
+    border: 0;
+    background: #4af9f2;
+    color: black;
+    box-shadow: 0px 0px 5px black;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+}
+
+.readbtn:last-of-type{
+    left: 20%;
+}
+
+.readbtn:active{
+    transform: scale(0.98);
+}
+
+.readbtn:focus{
+    outline: 0;
+    
+}
+
+@media(max-width:600px){
+    .infotwos{
+        height: 600px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .readbtn{
+        top: 85%;
+    }
+
+    .readbtn:last-of-type{
+        left: 50%;
+    }
+
+    .infotwos-child i{
+        font-size: 16px;
+    }
+}
+
+/* End Information Section  */
+
+/* Start Summery Sectioin  */
+
+.summerys{
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 0px 1px 0px #4af9f2,
+ 				 0px 2px 0px #4af9f2,
+ 				 0px 3px 0px #4af9f2;
+}
+.summerylines{
+    width: 0%;
+    height: 3px;
+    background: #fff;
+    box-shadow: 0px 3px 5px #4af9f2;
+    transition: all 0.5s ease;
+}
+.summerys:hover .summerylines{
+    width: 100%;
+}
+
+.summerytexts{
+    text-align: justify;
+    color: #fff;
+    text-shadow: 0px 1px 0px #4af9f2,
+ 				 0px 2px 0px #4af9f2,
+ 				 0px 3px 0px #4af9f2;
+    font-size: 30px;
+}
+
+
+/* End Summery Section  */
+
+/* Start Chapter List Section  */
+
+.chapterdiv{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(79,249,242,0.8),
+        rgba(255,255,255,0.5)
+        );
+    font-size: 30px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    /* align-items: center; */
+    color: #fff;
+    text-shadow: 0px 1px 0px gray,
+                 0px 2px 0px gray,
+                 0px 3px 0px gray;
+    
+    margin: 30px 0;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.fa-chevron-down{
+    margin-right: 30px;
+    margin-top: 5px;
+}
+
+.ch{
+    margin-left: 30px;
+}
+
+.chapterdiv.active{
+    height: 700px;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.slidemode,.bookmode,.carouselmode{
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.chapterdiv.active .slidemode,.chapterdiv.active .bookmode, .chapterdiv.active .carouselmode{
+    opacity: 1;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.main-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: red; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    height: 600px;
+    transition-delay: 1s;
+    transition: all 1s ease-in-out;
+   
+}
+
+.chapterdiv.active .main-container{
+    
+    display: flex;
+    transition-delay: 1s;
+    transition: all 1s ease-in-out;
+}
+
+
+
+.selectbox{
+    text-align: center;
+    width: 100%;
+}
+
+.selectbox span{
+    margin: 0 20px;
+}
+
+.slideplaybtn{
+    width: 100px;
+    height: 50px;
+    background-color: #4af9f2;
+    margin: 5px 10px;
+    border-radius: 50px;
+    border: none;
+}
+
+.slideplaybtn:focus{
+    outline: 0;
+    
+}
+
+.photo-container{
+   width: 700px;
+    height: 440px;
+    /* padding: 50px; */
+    /* background-color: blue; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    align-items: center;
+    overflow: hidden;
+}
+
+.photo-container-child{
+    /* width: auto; */
+    height: 420px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* background-color: #4af9f2; */
+    margin: 0 100px;
+    transform: translate(0px); 
+    transition: all 1s ease-in-out;
+    
+}
+.photo-container-child img{
+    /* height: 370px; */
+    margin-left: 30px;
+    margin-right: 60px;
+
+}
+
+
+
+.chapterdiv.active .book{
+    overflow: hidden;
+    background-color: powderblue;
+    display: none;
+    height: 90%;
+}
+
+.chapterdiv.active .book.show{
+    display: flex;
+}
+
+.chapterdiv.active .carouselbox{
+    /* background-color: red; */
+    display: none;
+}
+
+.chapterdiv.active .carouselbox.show{
+    display: flex;
+}
+
+@media(max-width:600px){
+
+    /* .main-container.slide{
+        flex-direction: column;
+    } */
+
+    .photo-container{
+        width: 280px;
+        margin: 0 auto;
+    }
+    
+    
+    .photo-container-child{
+     
+       justify-content: space-between;
+       
+      
+    }
+
+    .photo-container-child img{
+      
+        height: 100%;
+        margin: 20px 0;
+        margin-left: 0px;
+        margin-right: 70px;
+  
+    }
+  
+    .selectbox{
+        font-size: 15px;
+    }
+    .selectbox span{
+        margin: 0 10px;
+    }
+}
+
+/* End Chapter List Section */
+
+
+/* Start Book Section  */
+
+.book-child{
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: all 0.5s;
+    background-color: powderblue;
+}
+
+.bookparent{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+@media (max-width:600px){
+    .book-child{
+        width: 150px;
+        height: 260px;
+    }
+
+    .bookparent{
+        flex-direction: column;
+    }
+
+    .bookbtn i{
+        font-size: 10px;
+    }
+
+    
+
+}
+
+
+.paper{
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front,.back{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front{
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.back{
+    z-index: 0;
+}
+
+.front-content,.back-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: red; */
+
+}
+
+.front-content img,.back-content img{
+    width: 100%;
+    height: 100%;
+}
+
+.back-content{
+    transform: rotateY(180deg);
+}
+
+/* paper flip effect  */
+
+.flipped .front,
+.flipped .back{
+    transform: rotateY(-180deg);
+}
+
+/* controller Button  */
+
+.bookbtn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 50px 10px;
+    
+    transition:  all 0.5s;
+} 
+
+.bookbtn:focus{
+    outline: none;
+}
+
+.bookbtn:hover i{
+    color: #636363;
+}
+
+.bookbtn i{
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stck order  */
+
+.p1{
+    z-index: 4;
+}
+
+.p2{
+    z-index: 3;
+}
+
+.p3{
+    z-index: 2;
+}
+
+.p4{
+    z-index: 1;
+}
+
+/* End Book Section  */
+
+/* Start Carousel Section  */
+
+.main-container.carouselbox{
+    height: 620px;
+    border-radius: 5px;
+    background-color: #5ADBFF;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.carousel-container{
+    width: 700px;
+     height: 440px;
+     /* padding: 50px; */
+     /* background-color: rebeccapurple; */
+     margin: 0 auto;
+     display: flex;
+     justify-content: center;
+     /* flex-direction: column; */
+     align-items: center;
+     overflow: hidden;
+     margin-bottom: 60px;
+ }
+ 
+ .carousel-container-child{
+     /* width: auto; */
+     height: 420px;
+     display: flex;
+     /* justify-content: space-between; */
+     align-items: center;
+     /* background-color: bisque; */
+     margin: 0 100px;
+     transform: translate(0px); 
+     transition: all 1s ease-in-out;
+     
+ }
+
+
+
+.carousel-container-child img{
+   
+    margin-left: 30px;
+    margin-right: 60px;
+    
+}
+
+
+.carouselbtn{
+    width: 30%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 55%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    border: 0;
+    background-color: black;
+    color: #4af9f2;
+}
+
+.carouselprevbtn{
+    left: 17%;
+}
+
+@media(max-width:600px){
+
+    .carousel-container{
+        width: 280px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+    
+    
+    .carousel-container-child{
+     
+       justify-content: space-between;
+       
+      
+    }
+
+    .carousel-container-child img{
+      
+        height: 100%;
+        margin: 20px 0;
+        margin-left: 0px;
+        margin-right: 70px;
+  
+    }
+  
+    .selectbox{
+        font-size: 15px;
+    }
+    .selectbox span{
+        margin: 0 10px;
+    }
+}
+/* End Carousel Section  */
