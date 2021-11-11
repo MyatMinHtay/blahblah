@@ -513,7 +513,8 @@ header{
     height: 620px;
     border-radius: 5px;
     background-color: #5ADBFF;
-    /* display: flex; */
+    /* display: flex;
+    flex-direction: column; */
     justify-content: space-around;
     align-items: center;
 
